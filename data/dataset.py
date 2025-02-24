@@ -47,6 +47,7 @@ class VideoFrameDataset(Dataset):
 if __name__ == '__main__':
     from torchvision.transforms import Compose, Resize, ToTensor
     transform = Compose([Resize((64, 64)), ToTensor()])
-    dataset = VideoFrameDataset(video_dir='data/videos', transform=transform)
+    # dataset = VideoFrameDataset(video_dir='data/videos', transform=transform)
+    dataset = VideoFrameDataset(video_dir='/root/.cache/kagglehub/datasets/matthewjansen/ucf101-action-recognition/versions/4', transform=transform)
     keyframe1, keyframe2 = dataset[0]
     print("Keyframe shapes:", keyframe1.shape, keyframe2.shape)
